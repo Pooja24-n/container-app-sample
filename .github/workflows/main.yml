@@ -19,6 +19,7 @@ jobs:
       - name: Build and deploy Container App
         uses: azure/container-apps-deploy-action@v1
         with:
-          appSourcePath: ${{ github.workspace }}/src
           acrName: lucioregistry
-          imageToBuild: lucioregistry.azurecr.io/eazydraft/lucio-api:dev
+          containerAppName: container-app
+          resourceGroup: lucio-dev
+          imageToDeploy: lucioregistry.azurecr.io/eazydraft/lucio-api:dev
