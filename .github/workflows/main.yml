@@ -26,8 +26,12 @@ jobs:
           docker build . -t lucioregistry.azurecr.io/lucio-api:dev --file ./src/Dockerfile
           docker push lucioregistry.azurecr.io/lucio-api:dev
 
-  #    - name: Build and deploy Container App
-  #      uses: azure/container-apps-deploy-action@v1
+      - name: Deploy Container App
+        uses: azure/container-apps-deploy-action@v1
+        with:
+           appSourcePath: ${{ github.workspace }}
+           acrName: lucioregistry
+           imageToBuild: lucioregistry.azurecr.io/lucio-api:de
   #      with:
   #        acrName: lucioregistry
   #        containerAppName: container-app
