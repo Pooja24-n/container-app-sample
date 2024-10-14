@@ -23,7 +23,7 @@ jobs:
           username: lucioregistry
           password: fMyn+swCo/MQcIa/s8wLgYMGYzp2a8U/vSWEOJ5X+A+ACRCgcFsl
       - run: |
-          docker build . -t lucioregistry.azurecr.io/lucio-api:dev
+          docker build . -t lucioregistry.azurecr.io/lucio-api:dev --file ./src/Dockerfile
           docker push lucioregistry.azurecr.io/lucio-api:dev
 
   #    - name: Build and deploy Container App
