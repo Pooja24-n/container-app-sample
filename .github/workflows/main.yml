@@ -22,4 +22,5 @@ jobs:
           acrName: lucioregistry
           containerAppName: container-app
           resourceGroup: lucio-dev
+          location: Central India
           imageToDeploy: lucioregistry.azurecr.io/eazydraft/lucio-api:dev
