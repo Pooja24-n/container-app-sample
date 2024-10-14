@@ -15,6 +15,16 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
+      - name: Build and push image
+        uses: azure/docker-login@v1
+        with:
+          login-server: lucioregistry.azurecr.io
+          username: lucioregistry
+          password: fMyn+swCo/MQcIa/s8wLgYMGYzp2a8U/vSWEOJ5X+A+ACRCgcFsl
+      - run: |
+          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/eazydraft/lucio-api:dev
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/eazydraft/lucio-api:dev
 
       - name: Build and deploy Container App
         uses: azure/container-apps-deploy-action@v1
