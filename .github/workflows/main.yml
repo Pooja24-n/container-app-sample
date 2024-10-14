@@ -26,10 +26,10 @@ jobs:
           docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/eazydraft/lucio-api:dev
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/eazydraft/lucio-api:dev
 
-      - name: Build and deploy Container App
-        uses: azure/container-apps-deploy-action@v1
-        with:
-          acrName: lucioregistry
-          containerAppName: container-app
-          resourceGroup: lucio
-          imageToDeploy: lucioregistry.azurecr.io/eazydraft/lucio-api:dev
+  #    - name: Build and deploy Container App
+  #      uses: azure/container-apps-deploy-action@v1
+  #      with:
+  #        acrName: lucioregistry
+  #        containerAppName: container-app
+  #        resourceGroup: lucio
+  #        imageToDeploy: lucioregistry.azurecr.io/eazydraft/lucio-api:dev
